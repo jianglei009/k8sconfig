@@ -11,8 +11,7 @@ metadata:
     app: apple-ingress
 spec:
   rules:
-  - host: apple.ilovecloud.club
-    http:
+  - http:
         paths:
           - path: /apple
             backend:
