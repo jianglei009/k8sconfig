@@ -1,20 +1,20 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: "eks-example"
+  name: "apple-ingress"
   namespace: eks-example
   annotations:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internal
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 8088}]'
   labels:
-    app: eks-example
+    app: apple-ingress
 spec:
   rules:
-  - http:
+  - host: apple.ilovecloud.club
+    http:
         paths:
           - path: /apple
             backend:
               serviceName: "eks-example"
               servicePort: 5678
-
