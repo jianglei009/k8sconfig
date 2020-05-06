@@ -25,7 +25,7 @@ spec:
       - name: eks-example
         image: hashicorp/http-echo
         imagePullPolicy: Always
-	args:
+        args:
           - "-text=apple"
         ports:
         - containerPort: 5678
