@@ -12,8 +12,7 @@ metadata:
     app: eks-example
 spec:
   rules:
-  - host: apple.ilovecloud.club
-    http:
+  - http:
         paths:
           - path: /apple
             backend:
