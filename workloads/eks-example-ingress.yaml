@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: "eks-example"
+  namespace: eks-example
+  annotations:
+    flux.weave.works/automated: "true"
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internal
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 8088}]'
+  labels:
+    app: eks-example
+spec:
+  rules:
+  - host: apple.ilovecloud.club
+    http:
+        paths:
+          - path: /apple
+            backend:
+              serviceName: "eks-example"
+              servicPort: 5678
+
