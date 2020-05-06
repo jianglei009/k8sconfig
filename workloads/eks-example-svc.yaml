@@ -5,12 +5,14 @@ metadata:
   namespace: eks-example
   labels:
     app: eks-example
+  annotations:
+    flux.weave.works/automated: "true"
+
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
     - port: 5678
       targetPort: http
       protocol: TCP
-      name: http
   selector:
     app: eks-example
